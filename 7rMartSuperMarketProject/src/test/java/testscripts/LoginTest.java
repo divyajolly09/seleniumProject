@@ -9,7 +9,7 @@ import utilities.ExcelUtility;
 
 
 public class LoginTest extends Base {
-	@Test
+	@Test(groups= {"regression"})
 	public void verifyUserIsAbleToLoginWithValidUsernameAndVaildPassword()
 	{
 		String username=ExcelUtility.getString(1, 0, "LoginPage");
@@ -20,7 +20,7 @@ public class LoginTest extends Base {
 		adminUserTileIsDisplayed = loginpage.verifyUserIsAbleToNavigateToDashboard();
 		assertTrue(adminUserTileIsDisplayed,"user is not able to login with valid username and valid password");
 	}
-	@Test
+	@Test(groups= {"regression"})
 	public void verifyUserIsUnableToLoginWithInvalidUsernameAndVaildPassword()
 	{
 		String username=ExcelUtility.getString(2, 0, "LoginPage");
@@ -31,7 +31,7 @@ public class LoginTest extends Base {
 		alertMessageIsDisplayed=loginpage.verifyUserIsNotAbleToNavigateToDashboard();
 		assertTrue(alertMessageIsDisplayed,"User is able to login With invalid username And vaild Password");
 	}
-	@Test
+	@Test(groups= {"smoke"})
 	public void verifyUserIsUnableToLoginWithvalidUsernameAndInVaildPassword()
 	{
 		String username=ExcelUtility.getString(3, 0, "LoginPage");

@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+<listeners>
+<listener class-name="listenerforreport.Listeners"></listener>
+</listeners>
   <test thread-count="5" name="Test">
+	<parameter name="browser" value="chrome"></parameter>
     <classes>
-      <class name="testscripts.LoginTest">
+	<class name="testscripts.LoginTest">
 		<methods>
-		<include name="verifyUserIsAbleToLoginWithValidUsernameAndVaildPassword()"></include>
-		<include name="verifyUserIsUnableToLoginWithInvalidUsernameAndVaildPassword()"></include>
+		<include name="verifyUserIsAbleToLoginWithValidUsernameAndVaildPassword"></include>
+		</methods>
+		</class>
+	<class name="testscripts.AdminUserTest">
+		<methods>
+		<include name="userIsAbleToAddAdminUserDetails"></include>
+		</methods>
+		</class>
+	<class name="testscripts.ManageSliderTest">
+		<methods>
+		<include name="verifyUserIsAbleToAddSliderInformations"></include>
+		<include name="verifyUserIsAbleToDeleteExistingSliderInformation"></include>
 		</methods>
 		</class>
     </classes>
+
+
   </test> <!-- Test -->
 </suite> <!-- Suite -->
