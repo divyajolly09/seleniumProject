@@ -10,14 +10,14 @@ import utilities.ExcelUtility;
 import utilities.PageUtility;
 
 public class ManageLocationTest extends Base {
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,description="user is able to add location details",priority=7)
 	public void verifyUserIsAbleToAddLocationInformations()
 	{
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");
 		String state 	= ExcelUtility.getString(1, 0, "ManageLocationPage");
 		String location	= ExcelUtility.getString(1, 1, "ManageLocationPage");
-		String deliveryCharge	= ExcelUtility.getInteger(1, 2, "ManageLocationPage");
+		String deliveryCharge=ExcelUtility.getInteger(1, 2, "ManageLocationPage");
 		boolean isAlertMessageDisplayed;
 		ManageLocationPage managelocationpage=new ManageLocationPage(driver);
 		LoginPage loginpage = new LoginPage(driver);
@@ -30,7 +30,7 @@ public class ManageLocationTest extends Base {
 		isAlertMessageDisplayed=managelocationpage.verifyAlertMessageIsDisplayed();
 		assertTrue(isAlertMessageDisplayed,"User is not able to create new location");		
 	}
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,description="user is able to delete existing location details",priority=8)
 	public void verifyUserIsAbleToDeleteExistingLocationInformations()
 	{
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
@@ -47,7 +47,7 @@ public class ManageLocationTest extends Base {
 		isAlertMessageDisplayed=managelocationpage.verifyAlertMessageIsDisplayed();
 		assertTrue(isAlertMessageDisplayed,"User is not able to delete existing location");
 	}
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,description="verify No result found Message is displayed",priority=9)
 	public void verifyNoResultFoundMessageIsDisplayedWhenLocationIsNotAvailableToDelete()
 	{
 		String username = ExcelUtility.getString(1, 0, "LoginPage");

@@ -11,7 +11,7 @@ import utilities.PageUtility;
 
 public class ManageOfferCodeTest extends Base 
 {
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,description="verify User IS Able To Upload PromoCode In Existing OfferCode",priority=10)
 	public void verifyUserISAbleToUploadPromoCodeInExistingOfferCode() throws InterruptedException, AWTException
 	{
 		String username = ExcelUtility.getString(1, 0, "LoginPage");

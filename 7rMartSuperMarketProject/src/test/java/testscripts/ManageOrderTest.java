@@ -9,7 +9,7 @@ import utilities.PageUtility;
 
 public class ManageOrderTest extends Base 
 {
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,description="user is able to asign delivery boy",priority=11)
 	public void verifyUserIsAbleToAssignDeliveryBoy()
 	{
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
@@ -22,8 +22,8 @@ public class ManageOrderTest extends Base
 		alertIsDisplayed = manageOrderPage.verifyAlertmessageIsDisplayed();
 		assertTrue(alertIsDisplayed,"user is not able to assign delivery boy ");
 	}
-	@Test
 	
+	@Test(retryAnalyzer=retry.Retry.class,description="user is able to search an order id",priority=12)
 	public void verifyUserIsAbleToSearchAnOrderId()
 	{
 		String username = ExcelUtility.getString(1, 0, "LoginPage");

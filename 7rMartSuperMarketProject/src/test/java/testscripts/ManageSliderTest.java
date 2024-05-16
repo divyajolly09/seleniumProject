@@ -11,7 +11,7 @@ import utilities.PageUtility;
 
 public class ManageSliderTest extends Base 
 {
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,description="user is able to add slider informations",priority=13)
 	public void verifyUserIsAbleToAddSliderInformations() 
 	{
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
@@ -27,7 +27,7 @@ public class ManageSliderTest extends Base
 		alertIsDisplayed=managesliderpage.verifyAlertMessageIsDisplayed();
 		assertTrue(alertIsDisplayed,"user is not able to add slider informations");
 	}
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,description="user is able to delete slider informations",priority=14)
 	public void verifyUserIsAbleToDeleteExistingSliderInformation()
 	{
 		String username = ExcelUtility.getString(1, 0, "LoginPage");

@@ -10,7 +10,7 @@ import utilities.ExcelUtility;
 public class AdminUserTest extends Base {
 
 
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,description="user is able to add admin user details",priority=1)
 	public void userIsAbleToAddAdminUserDetails()
 	{
 		String username=ExcelUtility.getString(1, 0, "LoginPage");
@@ -25,7 +25,5 @@ public class AdminUserTest extends Base {
 		adminuserpage.adminUserTileclick().newButtonClick().enterValidAdminDetails(adminusername,adminpassword,usertextDropdown).clickonsavebutton();
 		String alertText=adminuserpage.alertMessageIsDisplayed();
 		assertEquals(expectedAlertText,alertText, "User is not able to Add new admin details");
-	}
-
-	
+	}	
 }

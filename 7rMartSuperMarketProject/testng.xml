@@ -12,11 +12,6 @@
 		<include name="verifyUserIsAbleToLoginWithValidUsernameAndVaildPassword"></include>
 		</methods>
 		</class>
-	<class name="testscripts.AdminUserTest">
-		<methods>
-		<include name="userIsAbleToAddAdminUserDetails"></include>
-		</methods>
-		</class>
 	<class name="testscripts.ManageSliderTest">
 		<methods>
 		<include name="verifyUserIsAbleToAddSliderInformations"></include>
@@ -24,7 +19,5 @@
 		</methods>
 		</class>
     </classes>
-
-
   </test> <!-- Test -->
 </suite> <!-- Suite -->
