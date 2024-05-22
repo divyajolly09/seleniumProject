@@ -2,9 +2,10 @@ package testscripts;
 
 import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
+
+import constant.Constants;
 import pages.LoginPage;
 import pages.ManageSliderPage;
-import utilities.Constants;
 import utilities.ExcelUtility;
 import utilities.PageUtility;
 

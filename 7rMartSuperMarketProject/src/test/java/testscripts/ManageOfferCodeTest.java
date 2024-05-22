@@ -3,10 +3,11 @@ package testscripts;
 import static org.testng.Assert.assertTrue;
 import java.awt.AWTException;
 import org.testng.annotations.Test;
+
+import constant.Constants;
 import pages.LoginPage;
 import pages.ManageOfferCodePage;
 import utilities.ExcelUtility;
-import utilities.Constants;
 import utilities.PageUtility;
 
 public class ManageOfferCodeTest extends Base 
